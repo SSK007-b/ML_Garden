@@ -1,0 +1,25 @@
+target: loan_status
+model_type: classification
+dataset_path: D:\Github Sanity\ML Garden\projects\loan_approval\data\raw.csv
+model_path: D:\Github Sanity\ML Garden\projects\loan_approval\model\loan_approval_model.pkl
+test_size: 0.2
+random_state: 42
+
+independent_features:
+  - no_of_dependents         
+  - education                
+  - self_employed            
+  - income_annum             
+  - loan_amount              
+  - loan_term                
+  - cibil_score              
+  - residential_assets_value 
+  - commercial_assets_value  
+  - luxury_assets_value      
+  - bank_asset_value
+
+dependent_features:
+  - loan_status
+
+categorical_features:
+  - loan_status
