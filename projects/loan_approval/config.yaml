@@ -18,6 +18,19 @@ independent_features:
   - luxury_assets_value      
   - bank_asset_value
 
+selected_features:
+  - no_of_dependents
+  - education
+  - self_employed
+  - income_annum
+  - loan_amount
+  - loan_term
+  - cibil_score
+  - residential_assets_value
+  - commercial_assets_value
+  - luxury_assets_value
+  - bank_asset_value
+
 dependent_features:
   - loan_status
 

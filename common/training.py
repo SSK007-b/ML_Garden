@@ -24,7 +24,7 @@ class DataTrainer:
         Returns:
         tuple: Training and testing sets (X_train, X_test, y_train, y_test).
         """
-        X = df[self.config.get('independent_features', [])]
+        X = df[self.config.get('selected_features', [])]
         y = df[self.config.get("dependent_features", [])]
         
         test_size = self.config.get('test_size', 0.2)

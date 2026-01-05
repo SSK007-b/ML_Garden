@@ -1,0 +1,43 @@
+target: Class
+description: A machine learning model to predict pistachio yield based on various agricultural parameters.
+model_type: classification
+dataset_path: D:\Github Sanity\ML Garden\projects\pistachio_prediction\data\raw.csv
+model_path: D:\Github Sanity\ML Garden\projects\pistachio_prediction\model\pistachio_prediction_model.pkl
+test_size: 0.2
+random_state: 42
+
+independent_features:
+  - AREA         
+  - PERIMETER                
+  - MAJOR_AXIS
+  - MINOR_AXIS             
+  - ECCENTRICITY              
+  - EQDIASQ                
+  - SOLIDITY              
+  - CONVEX_AREA 
+  - EXTENT  
+  - ASPECT_RATIO      
+  - ROUNDNESS
+  - COMPACTNESS
+  - SHAPEFACTOR_1
+  - SHAPEFACTOR_2
+  - SHAPEFACTOR_3
+  - SHAPEFACTOR_4
+
+selected_features:
+  - AREA
+  - PERIMETER
+  - MINOR_AXIS
+  - ECCENTRICITY
+  - EQDIASQ
+  - CONVEX_AREA
+  - ASPECT_RATIO
+  - COMPACTNESS
+  - SHAPEFACTOR_1
+  - SHAPEFACTOR_3
+
+dependent_features:
+  - Class
+
+categorical_features:
+  - Class
