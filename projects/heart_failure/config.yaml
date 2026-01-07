@@ -1,0 +1,36 @@
+target: DEATH_EVENT
+description: A machine learning model to predict pistachio yield based on various agricultural parameters.
+model_type: classification
+dataset_path: D:\Github Sanity\ML Garden\projects\heart_failure\data\raw.csv
+model_path: D:\Github Sanity\ML Garden\projects\heart_failure\model\heart_failure_model.pkl
+test_size: 0.2
+random_state: 42
+
+independent_features:
+ - age
+ - anaemia
+ - creatinine_phosphokinase
+ - diabetes
+ - ejection_fraction
+ - high_blood_pressure
+ - platelets
+ - serum_creatinine
+ - serum_sodium
+ - sex
+ - smoking
+ - time
+
+selected_features:
+ - age
+ - anaemia
+ - creatinine_phosphokinase
+ - ejection_fraction
+ - high_blood_pressure
+ - platelets
+ - serum_creatinine
+ - serum_sodium
+ - smoking
+ - time
+
+dependent_features:
+  - DEATH_EVENT

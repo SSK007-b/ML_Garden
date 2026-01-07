@@ -2,6 +2,7 @@ import yaml
 import joblib
 import logging
 import pandas as pd
+from common.preprocessing import DataPreprocessor
 from sklearn.model_selection import train_test_split
 
 logging.basicConfig(level=logging.INFO)
@@ -12,8 +13,9 @@ class DataTrainer:
         with open(config_path, 'r') as file:
             self.config = yaml.safe_load(file)
         logger.info("Configuration loaded successfully.")
+        self.preprocessor = DataPreprocessor()
 
-    def split_data(self, df: pd.DataFrame) -> tuple:
+    def split_data(self, df: pd.DataFrame, preprocessing = None) -> tuple:
         """
         Split the DataFrame into training and testing sets.
 
@@ -25,6 +27,8 @@ class DataTrainer:
         tuple: Training and testing sets (X_train, X_test, y_train, y_test).
         """
         X = df[self.config.get('selected_features', [])]
+        if preprocessing:
+            X = self.preprocessor.data_scaling(X)
         y = df[self.config.get("dependent_features", [])]
         
         test_size = self.config.get('test_size', 0.2)
